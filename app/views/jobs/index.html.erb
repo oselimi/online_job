@@ -1,0 +1,37 @@
+<div class="container">
+ <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+ <% @jobs.each do |job| %>
+  <% if expired(job.deadline) %>
+   <div class="col">
+     <div class="card h-100">
+       <div class="card-body">
+         <h5 class="card-title"><%= job.title %></h5>
+         <h3 class="card-text text-center" style="margin-top:100px"> Expired </h3>
+       </div>
+       <div class="card-footer">
+         <small class="text-muted">Expired</small>
+       </div>
+     </div>
+   </div>
+   <% else %>
+   <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+           <h5 class="card-title"><%= job.title %></h5>
+           <p class="card-text"><%= truncate(job.description, length: 120)%> </p><hr>
+           <ul class="list-group list-group-flush">
+            <%= link_to "More Details", job, class:"btn btn-primary"%>
+           <li class="list-group-item">Category: <%= job.category %> </li>
+           <li class="list-group-item">Name: <%= job.user.full_name %> </li>
+           <li class="list-group-item">Email: <%= job.user.email %> </li>
+         </ul>
+        </div>
+         <div class="card-footer">
+           <small class="text-muted">Deadline: <%= job.deadline.strftime("%d/%m/%Y") %></small>
+         </div>
+       </div>
+     </div>
+    <% end %>
+  <% end %>
+ </div>
+</div>
