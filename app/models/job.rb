@@ -1,5 +1,6 @@
 class Job < ApplicationRecord
   belongs_to :user
+  has_many :applicates, dependent: :destroy
 
   CATEGORIES = ["Programming", "IT Security", "Desgin", "IT Support"]
 

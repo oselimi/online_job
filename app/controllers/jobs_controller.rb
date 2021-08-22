@@ -20,6 +20,7 @@ class JobsController < ApplicationController
   end
 
   def show
+    @applicate = @job.applicates.build
   end
 
   def edit
