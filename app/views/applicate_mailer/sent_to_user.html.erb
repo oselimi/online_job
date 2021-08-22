@@ -1,0 +1,5 @@
+<div style="background-color:rgb(240, 240, 240); padding:20px; margin-top:20px; text-align:center; height:150px;">
+  <h1>Hello <%= @job.user.full_name %>!</h1>
+  <p>In your job <strong><%= @job.title %></strong> you have new applicant, 
+      more info please click in link <%= link_to 'new applicant', @root %></p>
+</div>

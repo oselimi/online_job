@@ -1,0 +1,29 @@
+<div>
+  <div style="background-color:rgb(240, 240, 240); padding:20px; margin-top:20px; text-align:center; height:150px;">
+    <h1>Thank You!</h1>
+    <p><strong><%= @applicate.fullname %></strong> your application was completed successfully.</p>
+    <ul style="list-style: none outside none; margin-left:25%; padding-top: 1rem;">
+      <li style="float:left; margin-left:10px; margin-right:10px">Phone: <strong><%= @applicate.phone %></strong></li>
+      <li style="float:left; margin-left:10px; margin-right:10px">Address: <strong><%= @applicate.address %></strong></li>
+      <li style="float:left; margin-left:10px; margin-right:10px">Education: <strong><%= @applicate.education %></strong></li>
+    </ul>
+  </div>
+  <hr>
+  <div>
+  <p>
+    <strong>Details: </strong> <%= @applicate.job.category %>
+  </p>
+    <div style="margin:auto;">
+      <h3 style="text-align:center; text-transform: uppercase;"><%= @applicate.job.title %></h3>
+      <p style="text-align:center;">
+        <%= @applicate.job.description%>
+      </p>
+    </div>
+    <hr>
+    <div style="border-bottom:2px">
+      <ul style="list-style:none">  
+        <li style="float:left; margin:right">Contact: <strong> <%= @applicate.job.user.email %> </strong></li>
+      </ul>
+    </div>
+  </div>
+</div>
