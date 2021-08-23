@@ -1,5 +1,6 @@
 class Applicate < ApplicationRecord
   belongs_to :job
+  has_one_attached :avatar
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   NUMBER_REGEX = /\d[0-9]\)*\z/

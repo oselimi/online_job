@@ -6,9 +6,9 @@ class ApplicateMailer < ApplicationMailer
   #   en.applicate_mailer.sent_to_user.subject
   #
   def sent_to_user
-    @job = params[:job]
+    @applicate = params[:applicate]
     @root = 'http://localhost:3000/jobs'
-    mail to: @job.user.email, subject: "New applicant in #{@job.title}"
+    mail to: @applicate.job.user.email, subject: "New applicant in #{@applicate.job.title}"
   end
 
  

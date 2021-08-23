@@ -12,17 +12,32 @@
           <th scope="col"> <%= link_to "edit", edit_job_path(job) %> </th>
           <th scope="col"> <%= link_to "delete", job, method: :delete, data: { confirm: "Are you sure?" } %> </th>
         </tr>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">#</th>
+          <th scope="col">#</th>
+          <th scope="col">APPLICANTS</th>
+          <th scope="col">#</th>
+          <th scope="col">#</th>  
+          <th scope="col">#</th>
+        <tr>
       </thead>
       <tbody>
         <% job.applicates.each do |applicant|%>
           <tr>
-            <td></td>
             <td><%= applicant.fullname %></td>
             <td><%= applicant.email %></td>
             <td><%= applicant.birthdate.strftime("%d/%m/%Y") %></td>
             <td><%= applicant.phone %></td>
             <td><%= applicant.address %></td>
             <td><%= applicant.education %></td>
+            <td>
+              <% if applicant.avatar.image? %>
+                <%= image_tag(applicant.avatar, style:"width:80px;" )%>
+              <% else %>
+                 <%= link_to applicant.avatar.filename, rails_blob_url(applicant.avatar, desposition: "attachment")%>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
