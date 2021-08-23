@@ -11,27 +11,17 @@
         </li>
         <% if logged_in?%>
         <li class="nav-item">
-          <%= link_to "New Job", new_job_path, class:"nav-link" %>
+          <%= link_to "My Jobs", jobs_path, class:"nav-link" %>
         </li>
-        <% end %>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Link
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+        <li class="nav-item ">
+           <%= link_to "New Job", new_job_path, class:"nav-link" %>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Link</a>
-        </li>
+         <% end %>
       </ul>
       <form class="d-flex">
         <% if logged_in? %>
-         <%= link_to "Logout", logout_path, method: :delete, class:"btn btn-outline-info" %>
+         <%= link_to "My Profile", user_path(current_user), class:"btn btn-outline-info  m-1" %>
+         <%= link_to "Logout", logout_path, method: :delete, class:"btn btn-outline-info  m-1" %>
         <% else %>
          <%= link_to "Login", login_path, class:"btn btn-outline-info m-1" %>
          <%= link_to "Signup", signup_path, class:"btn btn-outline-info m-1" %>

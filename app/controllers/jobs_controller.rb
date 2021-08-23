@@ -1,7 +1,9 @@
 class JobsController < ApplicationController
   before_action :set_params, only: [:show, :edit, :update ,:destroy]
+  before_action :authenticate_user, except: :show
+
   def index
-    @jobs = Job.all
+    @jobs = Job.where(user_id: current_user)
   end
 
   def new
@@ -12,7 +14,7 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     @job.user = current_user
     if @job.save
-      redirect_to root_path
+      redirect_to jobs_path
       flash[:info] = "Successfully you create new job"
     else
       render :new
@@ -37,7 +39,7 @@ class JobsController < ApplicationController
 
   def destroy
     if @job.destroy
-      redirect_to root_path
+      redirect_to jobs_path
       flash[:danger] = "You removed job"
     end
   end

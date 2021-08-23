@@ -27,8 +27,8 @@ module SessionsHelper
 
  def authenticate_user
   unless logged_in?
+   redirect_to login_path
    flash[:danger] = "Please log in"
-   redirect_to login_path 
   end
  end
 end
