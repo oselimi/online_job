@@ -26,7 +26,7 @@ Online Job is created as following including(frameworks and library):
 
 Here is a brief intro about what a developer must do in order to start developing the project further: 
 
-git clone [GitHub](https://github.com/oselimi/online_job)
+git clone https://github.com/oselimi/online_job
 cd online_job/
 
 ###### Database
