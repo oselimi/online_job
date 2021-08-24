@@ -26,21 +26,21 @@ Online Job is created as following including(frameworks and library):
 
 Here is a brief intro about what a developer must do in order to start developing the project further: 
 
-git clone https://github.com/oselimi/online_job
-cd online_job/
+* git clone https://github.com/oselimi/online_job
+* cd online_job/
 
 ###### Database
  In this app we are using is Postgresql developer must do create database and migrate as following:
-  rails db:create
-  rails db:migrate
-  rails db:seed
+ * rails db:create
+ * rails db:migrate
+ * rails db:seed
 
 ###### Building
  After migrate database you must do installing all gem files and yarn:
-  bundle install
-  yarn install
+ * bundle install
+ * yarn install
 
 ###### Server
  If everything is well, then start server:
-  rails server
+ * rails server
 
