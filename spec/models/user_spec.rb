@@ -42,5 +42,5 @@ RSpec.describe User, type: :model do
     it 'email should be downcase before save' do
       expect(user.email).to eq 'example@example.com'
     end
-  end 
+  end
 end

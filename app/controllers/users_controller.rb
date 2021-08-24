@@ -8,8 +8,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       redirect_to @user
-       flash[:primary] = "Hello #{@user.full_name}, successfully you create account."
-    else 
+      log_in(@user)
+      flash[:primary] = "Hello #{@user.full_name}, successfully you create account."
+    else
       render :new
     end
   end

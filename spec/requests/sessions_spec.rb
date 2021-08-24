@@ -18,7 +18,7 @@ RSpec.describe "Sessions", type: :request do
       }
 
       post '/login', user_params
-      expect(response).to redirect_to(user_path(user))
+      expect(response).to redirect_to(jobs_path)
     end
 
     it "should be invalid logged in" do
